@@ -57,6 +57,7 @@ class Sprite{
         this.image.src = data.image.src
         this.sprite = document.createElement('canvas')
         this.context = this.sprite.getContext('2d')
+        this.context.globalCompositeOperation = 'copy'
 
         this.setAnimation(data.ANIMATION_TYPE.DEFAULT)
     }
@@ -77,8 +78,6 @@ class Sprite{
             this.t = time
             this.dt = frame.t
             const {width,height} = this.data.tile
-
-            this.context.clearRect(0,0,width,height)
 
             this.context.drawImage(
                 this.image,
