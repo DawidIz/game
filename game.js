@@ -30,29 +30,18 @@ const map = new Map()
 const camera = new Camera(bg_context,map)
 
 
-
-
 sprite.context.scale(0.5,0.5)
 
 loop = () => {
     camera.render()
 
     sprite.update()
-    g_context.fillRect(0,0,600,600)
-    
-    g_context.drawImage(sprite.sprite,-20,0)
+    g_context.clearRect(0,0,600,600)
+
+    g_context.drawImage(sprite.sprite,0,0)
     g_context.drawImage(sprite.sprite,100,0)
     
     window.requestAnimationFrame(loop)
 }
 
 init()
-
-
-bg_canvas.addEventListener('mousemove',()=>{
-    console.log('click')
-    camera.scroll.x = 2
-    camera.scroll.y = 2
-})
-
-

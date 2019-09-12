@@ -1,4 +1,5 @@
-getMousePosition = (parent,event) => {
+getMousePosition = (event) => {
+    const parent = event.target
     return {
         x: event.clientX - parent.offsetLeft,
         y: event.clientY - parent.offsetTop
